@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.13/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**"]
+    "includes": ["**", "!node_modules", "!dist", "!build"]
   },
   "css": {
     "parser": {
@@ -35,6 +35,7 @@
         "useExhaustiveDependencies": "warn"
       },
       "suspicious": {
+        "noUnknownAtRules": "off",
         "noConsole": {
           "level": "warn",
           "options": {
@@ -49,9 +50,6 @@
         "useNodejsImportProtocol": "error",
         "noParameterAssign": "warn"
       },
-      "complexity": {
-        "noForEach": "off"
-      },
       "nursery": {
         "useSortedClasses": {
           "level": "warn",
@@ -62,19 +60,9 @@
           }
         }
       }
-    }
-  },
-  "javascript": {
-    "formatter": {
-      "jsxQuoteStyle": "double",
-      "quoteProperties": "asNeeded",
-      "trailingCommas": "es5",
-      "semicolons": "always",
-      "arrowParentheses": "always",
-      "bracketSameLine": false,
-      "quoteStyle": "double",
-      "attributePosition": "auto",
-      "bracketSpacing": true
+    },
+    "domains": {
+      "react": "recommended"
     }
   },
   "assist": {
