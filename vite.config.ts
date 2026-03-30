@@ -8,13 +8,6 @@ export default defineConfig({
   plugins: [react(), tsPaths(), tailwindcss()],
   build: {
     cssMinify: "lightningcss",
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          "react-vendor": ["react", "react-dom", "react-router-dom"],
-        },
-      },
-    },
   },
   optimizeDeps: {
     include: ["react/jsx-runtime"],
